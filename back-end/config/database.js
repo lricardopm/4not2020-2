@@ -9,7 +9,7 @@ module.exports = uri => {
     mongoose.connection.on('connected', () =>
         console.log('==> Mongoose! conectado com sucesso ao servidor')
     )
-
+    
     mongoose.connection.on('disconnected', () =>
         console.log('==> Mongoose! desconectado do servidor')
     )
