@@ -28,7 +28,7 @@
 
 */
 
-// Controller é um conjunto de funções associadas às operações sobre dados
+//  Controller é um conjunto de funções associadas às operações sobre dados
 
 const Curso = require('../models/Curso')
 
