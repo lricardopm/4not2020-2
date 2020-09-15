@@ -20,7 +20,7 @@
 
 // Controller é um conjunto de funções associadas às operações sobre dados
 
-const Curso = require('../models/Curso')
+const Professor = require('../models/Professor')
 
 const controller = {}   // Objeto vazio
 
@@ -29,7 +29,7 @@ controller.novo = async (req, res) => {
     // Usa os dados que chegam dentro do body da requisição
     // e os envia o BD para a criação de um novo objeto
     try {
-        await Curso.create(req.body)
+        await Professor.create(req.body)
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -43,7 +43,7 @@ controller.novo = async (req, res) => {
 // Operação RETRIEVE (all), função listar()
 controller.listar = async (req, res) => {
     try {
-        let dados = await Curso.find() // Traz todos os cursos cadastrados
+        let dados = await Professor.find() // Traz todos os cursos cadastrados
         res.send(dados) // Vai com status HTTP 200: OK
     }
     catch(erro) {
@@ -57,7 +57,7 @@ controller.obterUm = async (req, res) => {
     try {
         // Capturando o parâmetro id da URL
         const id = req.params.id
-        let obj = await Curso.findById(id)
+        let obj = await Professor.findById(id)
 
         // O objeto existe e foi encontrado
         if(obj) res.send(obj)       // HTTP 200
@@ -77,7 +77,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id
         
         // Busca e substituição do conteúdo do objeto
-        let ret = await Curso.findByIdAndUpdate(id, req.body)
+        let ret = await Professor.findByIdAndUpdate(id, req.body)
 
         // Se encontrou e atualizou, retornamos HTTP 204: No content
         if(ret) res.status(204).end()
@@ -97,7 +97,7 @@ controller.excluir = async (req, res) => {
         const id = req.body._id
         
         // Busca pelo id e exclusão
-        let ret = await Curso.findByIdAndDelete(id)
+        let ret = await Professor.findByIdAndDelete(id)
 
         // Encontrou e excluiu, HTTP 204: No content
         if(ret) res.status(204).end()
