@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    formapag: { type: String, required: true },
+    formapagamento: { type: String, required: true },
     observacao: { type: String, required: true }
 })
 

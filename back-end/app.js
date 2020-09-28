@@ -52,4 +52,7 @@ app.use('/formapag', formapag)
 const produto = require('./routes/produto')
 app.use('/produto', produto)
 
+const pedido = require('./routes/pedido')
+app.use('/pedido', pedido)
+
 module.exports = app;

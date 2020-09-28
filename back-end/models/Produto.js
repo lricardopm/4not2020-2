@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    produto: { type: String, required: true },
+    nomeprod: { type: String, required: true },
     tipo: { type: String, required: true },
     descricao: { type: String, required: true },
     adicional: { type: String, required: true },
