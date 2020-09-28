@@ -9,7 +9,7 @@ const esquema = mongoose.Schema({
     valortotal: { type: Number, required: true },
     formapag: { type: mongoose.ObjectId, ref: 'Formapag', required: true },
     tipoentrega: { type: String, required: true },
-    observacao: { type: String, required: true }
+    observacao: { type: String }
 })
 
 /*

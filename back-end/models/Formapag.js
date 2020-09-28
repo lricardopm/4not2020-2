@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
     formapagamento: { type: String, required: true },
-    observacao: { type: String, required: true }
+    observacao: { type: String }
 })
 
 /*

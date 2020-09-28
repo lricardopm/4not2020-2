@@ -20,7 +20,7 @@
 
 // Controller é um conjunto de funções associadas às operações sobre dados
 
-const Produto = require('../models/Produto')
+const Pedido = require('../models/Pedido')
 
 const controller = {}   // Objeto vazio
 
@@ -29,7 +29,7 @@ controller.novo = async (req, res) => {
     // Usa os dados que chegam dentro do body da requisição
     // e os envia o BD para a criação de um novo objeto
     try {
-        await Produto.create(req.body)
+        await Pedido.create(req.body)
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -43,11 +43,11 @@ controller.novo = async (req, res) => {
 // Operação RETRIEVE (all), função listar()
 controller.listar = async (req, res) => {
     try {
-        // Traz todos os Produtos cadastrados
-        let dados = await Produto.find() 
+        // Traz todos os Pedidos cadastrados
+        let dados = await Pedido.find() 
             .populate('parceiro', 'nome')
             .populate('cliente', 'nome')
-            .populate('produto', 'nomeprod')
+            .populate('Pedido', 'nomeprod')
             .populate('formapag', 'formapagamento')            
         res.send(dados) // Vai com status HTTP 200: OK
     }
@@ -62,7 +62,7 @@ controller.obterUm = async (req, res) => {
     try {
         // Capturando o parâmetro id da URL
         const id = req.params.id
-        let obj = await Produto.findById(id)
+        let obj = await Pedido.findById(id)
 
         // O objeto existe e foi encontrado
         if(obj) res.send(obj)       // HTTP 200
@@ -82,7 +82,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id
         
         // Busca e substituição do conteúdo do objeto
-        let ret = await Produto.findByIdAndUpdate(id, req.body)
+        let ret = await Pedido.findByIdAndUpdate(id, req.body)
 
         // Se encontrou e atualizou, retornamos HTTP 204: No content
         if(ret) res.status(204).end()
@@ -102,7 +102,7 @@ controller.excluir = async (req, res) => {
         const id = req.body._id
         
         // Busca pelo id e exclusão
-        let ret = await Produto.findByIdAndDelete(id)
+        let ret = await Pedido.findByIdAndDelete(id)
 
         // Encontrou e excluiu, HTTP 204: No content
         if(ret) res.status(204).end()

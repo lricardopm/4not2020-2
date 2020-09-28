@@ -5,7 +5,8 @@ const esquema = mongoose.Schema({
     tipo: { type: String, required: true },
     descricao: { type: String, required: true },
     adicional: { type: String, required: true },
-    parceiro: { type: mongoose.ObjectId, ref: 'Parceiro', required: true }
+    parceiro: { type: mongoose.ObjectId, ref: 'Parceiro', required: true },
+    valorunit: { type: Number, required: true }    
 })
 
 /*
