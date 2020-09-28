@@ -38,4 +38,18 @@ app.use('/sala-aula', sala_aula)
 const turma = require('./routes/turma')
 app.use('/turma', turma)
 
+/* projeto FOOD NOW*/
+
+const parceiro = require('./routes/parceiro')
+app.use('/parceiro', parceiro)
+
+const cliente = require('./routes/cliente')
+app.use('/cliente', cliente)
+
+const formapag = require('./routes/formapag')
+app.use('/formapag', formapag)
+
+const produto = require('./routes/produto')
+app.use('/produto', produto)
+
 module.exports = app;
