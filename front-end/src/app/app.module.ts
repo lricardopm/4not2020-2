@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // **** Acrescente a Linha Abaixo ***
 import { MaterialModule } from './material/material.module';
+import { MainToolbarComponent } from './ui/main-toolbar/main-toolbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainToolbarComponent
   ],
   imports: [
     BrowserModule,
