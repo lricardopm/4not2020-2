@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-//import { environment } from './../../environments/environment.prod';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,6 +12,6 @@ export class CursoService {
   constructor(private http: HttpClient) { }
   
   listar() {
-      return this.http.get(this.apiServer + 'curso')
+      return this.http.get(this.apiServer + 'curso').toPromise()
   }
 }

@@ -14,6 +14,12 @@ db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.sbwct.gcp.mongodb.net/${dbName}?r
 
 var app = express();
 
+// Habilita a chamda do back-end a partir de um servidor distinto
+// é necessário instalar:
+// nrpm install cons --save
+const cors = require('cors')
+app.use(cors())
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
