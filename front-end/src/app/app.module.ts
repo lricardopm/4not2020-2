@@ -17,6 +17,8 @@ import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CursoListComponent } from './curso/curso-list/curso-list.component';
+import { CursoFormComponent } from './curso/curso-form/curso-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { CursoListComponent } from './curso/curso-list/curso-list.component';
     MainToolbarComponent,
     MainMenuComponent,
     MainFooterComponent,
-    CursoListComponent
+    CursoListComponent,
+    CursoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { CursoListComponent } from './curso/curso-list/curso-list.component';
     BrowserAnimationsModule,
     // **** ACRESCENTE A LINHA ABAIXO E UMA VÍRGULA NA LINHA DE CIMA *** 
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
