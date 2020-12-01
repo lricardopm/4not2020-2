@@ -1,0 +1,48 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+		<mat-label>Nome da turma</mat-label>
+		<input matInput placeholder="Informe o nome da turma" [(ngModel)]="turma.nome" name="nome" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Curso</mat-label>
+    <mat-select [(ngModel)]="turma.curso" name="curso" required>
+      <mat-option *ngFor="let curso of cursos" [value]="curso._id">
+        {{ curso.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Professor</mat-label>
+    <mat-select [(ngModel)]="turma.professor" name="professor" required>
+      <mat-option *ngFor="let professor of professores" [value]="professor._id">
+        {{ professor.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Sala</mat-label>
+    <mat-select [(ngModel)]="turma.sala_aula" name="sala_aula" required>
+      <mat-option *ngFor="let sala of salasAula" [value]="sala._id">
+        {{ curso.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>
