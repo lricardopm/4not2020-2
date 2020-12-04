@@ -21,15 +21,26 @@ export class TurmaFormComponent implements OnInit {
   title : string = 'Nova turma'
 
   // Variáveis para armazenar as listagens de objetos relacionados
-  cursos : any = []  // Vetor vazio, nome no PLURAL
+  cursos : any = []   // Vetor vazio, nome no PLURAL
   professores : any = []
   salasAula : any = []
 
+  // Dias da semana
+  diasSemana : any = [
+    { val: 'dom', descr: 'Domingo' },
+    { val: 'seg', descr: 'Segunda-feira' },
+    { val: 'ter', descr: 'Terça-feira' },
+    { val: 'qua', descr: 'Quarta-feira' },
+    { val: 'qui', descr: 'Quinta-feira' },
+    { val: 'sex', descr: 'Sexta-feira' },
+    { val: 'sáb', descr: 'Sábado' },
+  ]
+
   constructor(
     private turmaSrv : TurmaService,
-    // Servoces das entidades relacionadas
+    // Services das entidades relacionadas
     private cursoSrv : CursoService,
-    private professorSrv: ProfessorService,
+    private professorSrv : ProfessorService,
     private salaAulaSrv : SalaAulaService,
     private snackBar : MatSnackBar,
     private location : Location,
@@ -52,23 +63,26 @@ export class TurmaFormComponent implements OnInit {
           'Que pena!', { duration: 5000 })
       }
     }
-  // carrega as listagens das entidades relacionadas
-  this.carregarDados()
-}
+    // Carrega as listagens das entidades relacionadas
+    this.carregarDados()
+  }
 
-    async  carregarDados() {
+  async carregarDados() {
     try {
-        this.cursos = await this.cursoSrv.listar()
-        this.professores = await this.professorSrv.listar()
-        this.salasAula = await this.salaAulaSrv.listar()
+      this.cursos = await this.cursoSrv.listar()
+      this.professores = await this.professorSrv.listar()
+      this.salasAula = await this.salaAulaSrv.listar()
     }
     catch(erro) {
-        console.log(erro)
-        this.snackBar.open('ERRO: não foi possível carregar todos os dados necessários para a página.', 'Que pena', { duration: 5000})
+      console.log(erro)
+      this.snackBar.open(`ERRO: não foi possível carregar todos os dados 
+        necessários para a página.`, 'Que pena', { duration: 5000 })
     }
   }
 
   async salvar(form: NgForm) {
+    //console.log(this.turma)
+    //return
     if(form.valid) {
       try {
         // 1) Salvar os dados no back-end

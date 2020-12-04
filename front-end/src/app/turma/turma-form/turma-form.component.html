@@ -3,15 +3,15 @@
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 
   <mat-form-field>
-		<mat-label>Nome da turma</mat-label>
-		<input matInput placeholder="Informe o nome da turma" [(ngModel)]="turma.nome" name="nome" required>
+	<mat-label>Nome da turma</mat-label>
+	<input matInput placeholder="Informe o nome do turma" [(ngModel)]="turma.nome" name="nome" required>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Curso</mat-label>
     <mat-select [(ngModel)]="turma.curso" name="curso" required>
       <mat-option *ngFor="let curso of cursos" [value]="curso._id">
-        {{ curso.nome }}
+        {{ curso.nome }} ({{ curso.nivel }})
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -29,9 +29,46 @@
     <mat-label>Sala</mat-label>
     <mat-select [(ngModel)]="turma.sala_aula" name="sala_aula" required>
       <mat-option *ngFor="let sala of salasAula" [value]="sala._id">
-        {{ curso.nome }}
+        {{ sala.nome }}
       </mat-option>
     </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data inicial</mat-label>
+    <input matInput [matDatepicker]="dataInicial" name="data_inicial" 
+      [(ngModel)]="turma.data_inicial" placeholder="Informe a data inicial"
+      required>
+    <mat-datepicker-toggle matSuffix [for]="dataInicial"></mat-datepicker-toggle>
+    <mat-datepicker #dataInicial></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data final</mat-label>
+    <input matInput [matDatepicker]="dataFinal" name="data_final" 
+      [(ngModel)]="turma.data_final" placeholder="Informe a data final"
+      required>
+    <mat-datepicker-toggle matSuffix [for]="dataFinal"></mat-datepicker-toggle>
+    <mat-datepicker #dataFinal></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Dias da semana</mat-label>
+    <mat-select [(ngModel)]="turma.dias_semana" name="dias_semana" required multiple>
+      <mat-option *ngFor="let dia of diasSemana" [value]="dia.val">
+        {{ dia.descr }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+	<mat-label>Horário inicial</mat-label>
+	<input matInput placeholder="Informe o horário inicial" [(ngModel)]="turma.horario_inicial" name="horario_inicial" required mask="00:00" [dropSpecialCharacters]="false">
+  </mat-form-field>
+
+  <mat-form-field>
+	<mat-label>Horário final</mat-label>
+	<input matInput placeholder="Informe o horário final" [(ngModel)]="turma.horario_final" name="horario_final" required mask="00:00" [dropSpecialCharacters]="false">
   </mat-form-field>
 
   <mat-toolbar class="form-buttons">
