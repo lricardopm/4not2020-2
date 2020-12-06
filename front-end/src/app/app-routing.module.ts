@@ -14,6 +14,8 @@ import { ParceiroFormComponent } from './parceiro/parceiro-form/parceiro-form.co
 import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
 
+import { ProdutoListComponent } from './produto/produto-list/produto-list.component';
+import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
 
 const routes: Routes = [
     // Nomes de rota no Angular (path) NÃO começam com uma barra
@@ -35,8 +37,11 @@ const routes: Routes = [
 
     { path: 'cliente', component: ClienteListComponent  },    
     { path: 'cliente/novo', component: ClienteFormComponent },
-    { path: 'cliente/:id', component: ClienteFormComponent }
+    { path: 'cliente/:id', component: ClienteFormComponent },
 
+    { path: 'produto', component: ProdutoListComponent  },    
+    { path: 'produto/novo', component: ProdutoFormComponent },
+    { path: 'produto/:id', component: ProdutoFormComponent }
     
 ];
 
