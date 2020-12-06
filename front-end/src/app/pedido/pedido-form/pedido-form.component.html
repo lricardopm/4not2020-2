@@ -1,0 +1,82 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+    <mat-label>Data Pedido</mat-label>
+    <input matInput [matDatepicker]="datapedido" name="datapedido" 
+      [(ngModel)]="pedido.datapedido" placeholder="Informe a data do pedido"
+      required>
+    <mat-datepicker-toggle matSuffix [for]="datapedido"></mat-datepicker-toggle>
+    <mat-datepicker #datapedido></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Parceiro</mat-label>
+    <mat-select [(ngModel)]="pedido.parceiro" name="parceiro" required>
+      <mat-option *ngFor="let parceiro of parceiros" [value]="parceiro._id">
+        {{ parceiro.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cliente</mat-label>
+    <mat-select [(ngModel)]="pedido.cliente" name="cliente" required>
+      <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
+        {{ cliente.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Produto</mat-label>
+    <mat-select [(ngModel)]="pedido.produto" name="produto" required>
+      <mat-option *ngFor="let produto of produtos" [value]="produto._id">
+        {{ produto.nomeprod }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Quantidade</mat-label>
+    <input matInput type="number" [(ngModel)]="pedido.quantidade" name="quantidade" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valor Total</mat-label>
+    <input matInput type="number" [(ngModel)]="pedido.valortotal" name="valortotal" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Forma de Pagamento</mat-label>
+    <mat-select [(ngModel)]="pedido.formapag" name="formapag" required>
+      <mat-option *ngFor="let formapag of formapags" [value]="formapag._id">
+        {{ formapag.formapagamento }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+	<mat-label>Tipo de Entrega</mat-label>
+	<input matInput placeholder="Informe o tipo de entrega" [(ngModel)]="pedido.tipoentrega" name="tipoentrega" required>
+  </mat-form-field>
+
+
+  <mat-form-field>
+	<mat-label>Observação</mat-label>
+	<input matInput placeholder="Informe uma observação" [(ngModel)]="pedido.observacao" name="observacao" required>
+  </mat-form-field>
+
+<mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>
