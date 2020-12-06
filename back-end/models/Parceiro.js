@@ -5,10 +5,11 @@ const esquema = mongoose.Schema({
     endereco: { type: String, required: true },
     telefone: { type: String, required: true },
     categoria: { type: String, required: true },
-    horafunc: { type: String, required: true },
+    horafuncinicial: { type: String, required: true },
+    horafuncfinal: { type: String, required: true },
     valormin: { type: Number, required: true, min: 12.0, default: 15.0 },
     valortax: { type: Number, required: true, min: 5.5, default: 5.5 },
-    tempoent: { type: String, required: true }
+    tempoent: { type: Number}
 })
 
 /*

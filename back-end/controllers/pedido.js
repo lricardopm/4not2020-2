@@ -47,7 +47,7 @@ controller.listar = async (req, res) => {
         let dados = await Pedido.find() 
             .populate('parceiro', 'nome')
             .populate('cliente', 'nome')
-            .populate('Pedido', 'nomeprod')
+            .populate('produto', 'nomeprod')
             .populate('formapag', 'formapagamento')            
         res.send(dados) // Vai com status HTTP 200: OK
     }
