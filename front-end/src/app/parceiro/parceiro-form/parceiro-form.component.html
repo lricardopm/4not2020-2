@@ -1,0 +1,63 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+		<mat-label>Nome do Parceiro</mat-label>
+		<input matInput placeholder="Informe o Nome do Parceiro" [(ngModel)]="parceiro.nome" name="nome" required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Endereço</mat-label>
+		<input matInput placeholder="Informe o Endereço do Parceiro" [(ngModel)]="parceiro.endereco" name="endereco" required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Telefone</mat-label>
+		<input matInput placeholder="Informe o Telefone do Parceiro" [(ngModel)]="parceiro.telefone" name="telefone" required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Categoria</mat-label>
+		<input matInput placeholder="Informe a Categoria do Parceiro" [(ngModel)]="parceiro.categoria" name="categoria" required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Horario Funcionamento Inicial</mat-label>
+		<input matInput placeholder="Informe o Horario de Funcionamento Inicial" [(ngModel)]="parceiro.horafuncinicial" name="horafuncinicial" required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Horario Funcionamento Final</mat-label>
+		<input matInput placeholder="Informe o Horario de Funcionamento Final" [(ngModel)]="parceiro.horafuncfinal" name="horafuncfinal" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valor mínimo</mat-label>
+    <input matInput type="number" [(ngModel)]="parceiro.valormin" name="valormin" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valor taxa</mat-label>
+    <input matInput type="number" [(ngModel)]="parceiro.valortax" name="valortax" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Tempo de Entrega</mat-label>
+    <input matInput type="number" [(ngModel)]="parceiro.tempoent" name="tempoent" required>
+  </mat-form-field>
+
+  <!-- Não mexer a partir daqui -->
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>

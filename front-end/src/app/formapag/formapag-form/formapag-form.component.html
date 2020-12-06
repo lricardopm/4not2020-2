@@ -1,0 +1,28 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+		<mat-label>Descrição da Forma de Pagamento</mat-label>
+		<input matInput placeholder="Informe a Descrição da Forma de Pagamento" [(ngModel)]="formapag.formapagamento" name="formapagamento" required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Observação da Forma de Pagamento</mat-label>
+		<input matInput placeholder="Informe a Observação da Forma de Pagamento" [(ngModel)]="formapag.observacao" name="observacao" required>
+  </mat-form-field>
+
+  <!-- Não mexer a partir daqui -->
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>

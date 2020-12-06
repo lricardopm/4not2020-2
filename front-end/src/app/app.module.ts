@@ -30,6 +30,11 @@ import { FormsModule } from '@angular/forms';
 import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
 import { FormapagListComponent } from './formapag/formapag-list/formapag-list.component';
+import { FormapagFormComponent } from './formapag/formapag-form/formapag-form.component';
+import { ParceiroListComponent } from './parceiro/parceiro-list/parceiro-list.component';
+import { ParceiroFormComponent } from './parceiro/parceiro-form/parceiro-form.component';
+import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
+import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,12 @@ import { FormapagListComponent } from './formapag/formapag-list/formapag-list.co
     CursoFormComponent,
     TurmaListComponent,
     TurmaFormComponent,
-    FormapagListComponent
+    FormapagListComponent,
+    FormapagFormComponent,
+    ParceiroListComponent,
+    ParceiroFormComponent,
+    ClienteListComponent,
+    ClienteFormComponent
   ],
   imports: [
     BrowserModule,

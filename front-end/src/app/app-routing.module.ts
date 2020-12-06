@@ -6,7 +6,14 @@ import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
 
 import { FormapagListComponent } from './formapag/formapag-list/formapag-list.component';
-//import { FormapagFormComponent } from './formapag/formapag-form/formapag-form.component';
+import { FormapagFormComponent } from './formapag/formapag-form/formapag-form.component';
+
+import { ParceiroListComponent } from './parceiro/parceiro-list/parceiro-list.component';
+import { ParceiroFormComponent } from './parceiro/parceiro-form/parceiro-form.component';
+
+import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
+import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+
 
 const routes: Routes = [
     // Nomes de rota no Angular (path) NÃO começam com uma barra
@@ -18,10 +25,17 @@ const routes: Routes = [
     { path: 'turma/novo', component: TurmaFormComponent },
     { path: 'turma/:id', component: TurmaFormComponent },
 
-    { path: 'formapag', component: FormapagListComponent  }
-  //  { path: 'formapag/novo', component: FormapagComponent },
- //   { path: 'formapag/:id', component: FormapagComponent }
+    { path: 'formapag', component: FormapagListComponent  },
+    { path: 'formapag/novo', component: FormapagFormComponent },
+    { path: 'formapag/:id', component: FormapagFormComponent },
 
+    { path: 'parceiro', component: ParceiroListComponent  },    
+    { path: 'parceiro/novo', component: ParceiroFormComponent },
+    { path: 'parceiro/:id', component: ParceiroFormComponent },
+
+    { path: 'cliente', component: ClienteListComponent  },    
+    { path: 'cliente/novo', component: ClienteFormComponent },
+    { path: 'cliente/:id', component: ClienteFormComponent }
 
     
 ];
