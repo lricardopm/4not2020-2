@@ -24,7 +24,7 @@ export class PedidoFormComponent implements OnInit {
   // Variável para armazenar os dados do registro
   pedido : any = {}  // Objeto vazio, nome no SINGULAR
 
-  title : string = 'Nova pedido'
+  title : string = 'Novo Pedido'
 
   // Variáveis para armazenar as listagens de objetos relacionados
   cursos : any = []   // Vetor vazio, nome no PLURAL

@@ -21,7 +21,7 @@ export class ClienteFormComponent implements OnInit {
     { valor: 'Avançado' }
   ]
 
-  title : string = 'Novo cliente'
+  title : string = 'Novo Cliente'
 
   constructor(
     private clienteSrv : ClienteService,

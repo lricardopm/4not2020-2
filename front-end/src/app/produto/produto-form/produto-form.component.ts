@@ -21,7 +21,7 @@ export class ProdutoFormComponent implements OnInit {
   // Variável para armazenar os dados do registro
   produto : any = {}  // Objeto vazio, nome no SINGULAR
 
-  title : string = 'Nova produto'
+  title : string = 'Novo Produto'
 
   // Variáveis para armazenar as listagens de objetos relacionados
   cursos : any = []   // Vetor vazio, nome no PLURAL

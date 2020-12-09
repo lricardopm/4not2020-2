@@ -21,7 +21,7 @@ export class ParceiroFormComponent implements OnInit {
     { valor: 'Avançado' }
   ]
 
-  title : string = 'Novo parceiro'
+  title : string = 'Novo Parceiro'
 
   constructor(
     private parceiroSrv : ParceiroService,

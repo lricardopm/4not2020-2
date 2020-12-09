@@ -21,7 +21,7 @@ export class FormapagFormComponent implements OnInit {
     { valor: 'Avançado' }
   ]
 
-  title : string = 'Novo formapag'
+  title : string = 'Nova Forma de Pagamento'
 
   constructor(
     private formapagSrv : FormapagService,
